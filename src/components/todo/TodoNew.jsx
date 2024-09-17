@@ -5,23 +5,27 @@ const TodoNew = (props) => {
     //useStage Hook getter/setter
     //destructuring array
     // const valueInput = "eric";
-    const [valueInput, getValueInput] = useState("eric")
+    const [valueInput, setValueInput] = useState("eric")
 
     const { addNewTodo } = props;
     //addNewTodo("eric");
 
     const handleClick = () => {
-        addNewTodo(valueInput)
+        addNewTodo(valueInput);
+        setValueInput("")
     }
 
     const handleChange = (name) => {
-        getValueInput(name);
+        setValueInput(name);
+
     }
 
     return (
         <div className='todo-new'>
-            <input type="text"
+            <input
+                type="text"
                 onChange={(event) => handleChange(event.target.value)}
+                value={valueInput}
             />
             <button
                 style={{ cursor: "point" }}

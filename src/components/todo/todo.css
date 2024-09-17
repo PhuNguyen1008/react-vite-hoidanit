@@ -45,14 +45,22 @@
 }
 
 .todo-data {
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-}
+    gap: 15px;
+    width: 800px;
+    /* Chiều rộng cố định */
+    max-height: 400px;
+    /* Giới hạn chiều cao */
+    overflow-y: auto;
+    /* Cuộn dọc khi nội dung vượt quá chiều cao */
+    overflow-x: auto;
+    /* Cuộn ngang nếu cần */
 
-.todo-data div {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
 }
 
 .todo-image {
@@ -90,4 +98,9 @@
     .logo {
         animation: logo-spin infinite 20s linear;
     }
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
 }
